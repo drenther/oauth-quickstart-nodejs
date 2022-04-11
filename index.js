@@ -6,7 +6,7 @@ const session = require('express-session');
 const opn = require('open');
 const app = express();
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const refreshTokenStore = {};
 const accessTokenCache = new NodeCache({ deleteOnExpire: true });
@@ -215,5 +215,5 @@ app.get('/error', (req, res) => {
   res.end();
 });
 
-app.listen(PORT, () => console.log(`=== Starting your app on http://localhost:${PORT} ===`));
+app.listen(PORT, () => console.log(`=== Starting your app on ===`));
 opn(`http://localhost:${PORT}`);
