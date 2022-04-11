@@ -3,7 +3,7 @@ const express = require('express');
 const request = require('request-promise-native');
 const NodeCache = require('node-cache');
 const session = require('express-session');
-const opn = require('open');
+
 const app = express();
 
 const PORT = process.env.PORT || 3000;
@@ -216,4 +216,3 @@ app.get('/error', (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`=== Starting your app on ===`));
-opn(`http://localhost:${PORT}`);
